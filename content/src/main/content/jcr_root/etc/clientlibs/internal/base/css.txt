@@ -1,0 +1,7 @@
+#base=css
+normalize.css
+font-awesome.min.css
+slick-slider.css
+jquery.fancybox.css
+main.css
+home-page.css
