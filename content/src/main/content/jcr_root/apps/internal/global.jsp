@@ -11,9 +11,12 @@
         com.day.cq.wcm.api.designer.Style,
         com.day.cq.wcm.api.components.ComponentContext,
         com.day.cq.wcm.api.components.EditContext"
+
         %><%@taglib prefix="sling" uri="http://sling.apache.org/taglibs/sling/1.0" %><%
 %><%@taglib prefix="cq" uri="http://www.day.com/taglibs/cq/1.0" %><%
 %><%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><%
 %><%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %><%
-%><%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %><%
-%><cq:defineObjects />
+%><%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@page import="com.day.cq.wcm.api.WCMMode" %>
+<%boolean isEdit =(WCMMode.fromRequest(request) == WCMMode.EDIT);%>
+<cq:defineObjects />

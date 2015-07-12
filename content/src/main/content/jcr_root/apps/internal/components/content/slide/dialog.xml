@@ -61,6 +61,16 @@
                         fieldLabel="Rightcolorfield"
                         name="./rightcolorfield"
                         xtype="colorfield"/>
+                    <leftCustomColor
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Leftcustom"
+                        name="./leftcustom"
+                        xtype="textfield"/>
+                    <rightCustomColor
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Rightcustom"
+                        name="./rightcustom"
+                        xtype="textfield"/>
                 </items>
             </basic>
             <image
