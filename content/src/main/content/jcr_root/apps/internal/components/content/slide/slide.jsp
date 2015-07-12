@@ -3,10 +3,7 @@
 <%
     String heading = properties.get("heading","");
     String description = properties.get("description","");
-    String firstButton = properties.get("firstbutton","");
-    String secondButton = properties.get("secondbutton","");
-    String firstPathfield = properties.get("firstpathfield","");
-    String secondPathfield = properties.get("secondpathfield","");
+    int button = properties.get("button",0);
     String leftColorfield = properties.get("leftcolorfield","");
     String rightColorfield = properties.get("rightcolorfield","");
     String leftCustomColor = properties.get("leftcustom","");
@@ -20,10 +17,10 @@
 	}
 
     if(!rightCustomColor.equals("")){ 
-            rightColor = rightCustomColor;
-        }else{
-            rightColor = rightColorfield;
-        }
+        rightColor = rightCustomColor;
+    }else{
+        rightColor = rightColorfield;
+    }
 
 %>
 
@@ -33,21 +30,17 @@
             <div class="heading"><%= heading %></div>
             <p> <%= description %> </p>
             <div class="buttonWrapper">
-                <% if((!firstButton.equals(""))&& (!secondButton.equals(""))){ %>
-                <div class="buttonGlbl"><a href="<%= firstPathfield %>"><span><i class="fa fa-arrow-right"></i> <%= firstButton %></span></a></div>
-                <div class="buttonGlbl"><a href="<%= secondPathfield %>"><span><i class="fa fa-arrow-right"></i> <%= secondButton %></span></a></div>
-                <% } else if((!firstButton.equals(""))&&(secondButton.equals (""))){ %>
-                <div class="buttonGlbl"><a href="<%= firstPathfield %>"><span><i class="fa fa-arrow-right"></i> <%= firstButton %></span></a></div>
-                <% } else { %>
-                <div class="buttonGlbl"><a href="<%= secondPathfield %>"><span><i class="fa fa-arrow-right"></i> <%= secondButton %></span></a></div>
-                <% } %>
+                <% 	for(int i=1;i<=button;i++ ){ 
+        				String path="button_"+i;   %>
+                		<cq:include path="<%= path %>" resourceType="/apps/internal/components/content/buttonComponent" />
+				<%  } %>
             </div>
         </div>
     </div>
-    <div class="spotlightContentRight pink" style = "background: #<%= rightColor %>"></div>
+   <div class="spotlightContentRight pink" style = "background: #<%= rightColor %>"></div>
 </div>
-<% 
-if(isEdit){ %>
+
+            <% if(isEdit){ %>
 Enter Slide Details
 <div style="clear:both;"></div>
 <%}%>

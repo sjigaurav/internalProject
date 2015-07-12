@@ -29,28 +29,6 @@
                         name="./description"
                         validateOnBlur="true"
                         xtype="richtext"/>
-                    <button
-                        jcr:primaryType="nt:unstructured"
-                        fieldLabel="Button"
-                        name="./firstbutton"
-                        validateOnBlur="true"
-                        xtype="textfield"/>
-                    <secondbutton
-                        jcr:primaryType="nt:unstructured"
-                        fieldLabel="Button"
-                        name="./secondbutton"
-                        validateOnBlur="true"
-                        xtype="textfield"/>
-                    <pathfield
-                        jcr:primaryType="nt:unstructured"
-                        fieldLabel="Firstpathfield"
-                        name="./firstpathfield"
-                        xtype="pathfield"/>
-                    <secondpathfield
-                        jcr:primaryType="nt:unstructured"
-                        fieldLabel="Secondpathfield"
-                        name="./secondpathfield"
-                        xtype="pathfield"/>
                     <leftcolorfield
                         jcr:primaryType="nt:unstructured"
                         fieldLabel="Leftcolorfield"
@@ -71,6 +49,11 @@
                         fieldLabel="Rightcustom"
                         name="./rightcustom"
                         xtype="textfield"/>
+                    <button
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="No.of Buttons"
+                        name="./button"
+                        xtype="numberfield"/>
                 </items>
             </basic>
             <image
