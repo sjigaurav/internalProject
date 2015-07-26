@@ -31,8 +31,38 @@
                         xtype="textfield"/>
                     <prop5
                         jcr:primaryType="nt:unstructured"
+                        allowBlank="false"
+                        blankText=""
+                        disabled="false"
+                        emptyText=""
+                        fieldDescription=""
                         fieldLabel="Button"
+                        fieldSubLabel=""
+                        grow="false"
+                        hideLabel="false"
+                        hideMode=""
+                        inputType=""
+                        maxLength=""
+                        maxLengthText=""
+                        minLength=""
+                        minLengthText=""
+                        msgTarget=""
                         name="./button"
+                        readOnly="false"
+                        regex=""
+                        regexText=""
+                        selectOnFocus="false"
+                        validateOnBlur="true"
+                        validationDelay=""
+                        validationEvent=""
+                        validator=""
+                        vtype=""
+                        vtypeText=""
+                        xtype="textfield"/>
+                    <prop6
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Secondbutton"
+                        name="./secondbutton"
                         validateOnBlur="true"
                         xtype="textfield"/>
                 </items>
@@ -40,7 +70,7 @@
             <image
                 jcr:primaryType="cq:Widget"
                 cropParameter="./imageCrop"
-                ddGroups="[media]"
+                ddGroups="\[&quot;media&quot;]"
                 fileNameParameter="./fileName"
                 fileReferenceParameter="./fileReference"
                 mapParameter="./imageMap"

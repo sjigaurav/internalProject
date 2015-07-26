@@ -2,7 +2,12 @@
 <%@page session="false" %>
 <%@page import="com.day.cq.wcm.api.WCMMode,java.util.Iterator" %>
 
-<div class="cardRow hpCarouselBg">
+<% String css = "";
+
+if(!isEdit){
+	css="cardRow hpCarouselBg";
+}%>
+<div class="<%= css %>">
     <div class="slick-slider">
         <% if(isEdit){ %>
  		<cq:include path="par" resourceType="foundation/components/parsys"/>

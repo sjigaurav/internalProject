@@ -28,7 +28,13 @@
                         fieldLabel="Description"
                         name="./description"
                         validateOnBlur="true"
-                        xtype="richtext"/>
+                        xtype="richtext">
+                        <htmlRules jcr:primaryType="nt:unstructured">
+                            <blockHandling
+                                jcr:primaryType="nt:unstructured"
+                                removeSingleParagraphContainer="{Boolean}true"/>
+                        </htmlRules>
+                    </prop4>
                 </items>
             </tab1>
         </items>

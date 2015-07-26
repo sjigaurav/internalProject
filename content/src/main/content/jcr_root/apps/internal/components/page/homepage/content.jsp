@@ -1,4 +1,4 @@
-<%@include file="/libs/foundation/global.jsp" %>
+<%@include file="/apps/internal/global.jsp" %>
 <div class="width100Per">
     <div class="homePageWrapper">
         <div class="container">

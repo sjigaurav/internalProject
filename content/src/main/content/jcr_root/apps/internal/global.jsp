@@ -10,7 +10,8 @@
         com.day.cq.wcm.api.designer.Design,
         com.day.cq.wcm.api.designer.Style,
         com.day.cq.wcm.api.components.ComponentContext,
-        com.day.cq.wcm.api.components.EditContext"
+        com.day.cq.wcm.api.components.EditContext,
+		com.day.cq.wcm.api.components.IncludeOptions"
 
         %><%@taglib prefix="sling" uri="http://sling.apache.org/taglibs/sling/1.0" %><%
 %><%@taglib prefix="cq" uri="http://www.day.com/taglibs/cq/1.0" %><%
@@ -18,5 +19,13 @@
 %><%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %><%
 %><%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@page import="com.day.cq.wcm.api.WCMMode" %>
-<%boolean isEdit =(WCMMode.fromRequest(request) == WCMMode.EDIT);%>
+<%
+    boolean isEdit =(WCMMode.fromRequest(request) == WCMMode.EDIT);
+	if(WCMMode.fromRequest(request) != WCMMode.EDIT){
+        IncludeOptions.getOptions(request,true).setDecorationTagName("");
+    }
+
+%>
+
+
 <cq:defineObjects />
