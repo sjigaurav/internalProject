@@ -34,6 +34,11 @@
                                 jcr:primaryType="nt:unstructured"
                                 removeSingleParagraphContainer="{Boolean}true"/>
                         </htmlRules>
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <misctools
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                        </rtePlugins>
                     </prop4>
                 </items>
             </tab1>

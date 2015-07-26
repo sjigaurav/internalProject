@@ -3,17 +3,18 @@
 <%@page import="com.day.cq.wcm.api.WCMMode,java.util.Iterator" %>
 
 <%  String css = "";
-    if(!isEdit){
-		css="slick-slider";
+if(!isEdit){
+    css="slick-slider";
 }%>
-<div class="sliderWrapper">
-    <div class="<%= css %>">
-        <% if(isEdit){ %>
-        <cq:include path="par" resourceType="foundation/components/parsys"/>
-        <div style="clear:both;"></div>
-        <%
+<div class="havellsAtGlance">
+    <div class="sliderWrapper">
+        <div class="<%= css %>">
+            <% if(isEdit){ %>
+            <cq:include path="par" resourceType="foundation/components/parsys"/>
+            <div style="clear:both;"></div>
+            <%
     
-                     }else{
+                         }else{
     String r=resource.getPath();
     Resource res = resourceResolver.getResource(r+"/par");
     
@@ -22,12 +23,15 @@
         Resource temp=itr.next();
         
         %>       
-        <sling:include path="<%= temp.getPath() %>" />
-        <% 	}    
+            <sling:include path="<%= temp.getPath() %>" />
+            <% 	}    
 }
 
 %>
+        </div>
     </div>
 </div>
+
+
 
 <div style="clear:both;"></div>

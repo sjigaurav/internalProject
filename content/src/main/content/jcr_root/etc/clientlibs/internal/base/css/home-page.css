@@ -106,6 +106,12 @@
 	vertical-align: top;
 	position: relative;
 }
+.homePageWrapper .cardRow .col1 {
+	float:left;
+	width: 50%;
+	vertical-align: top;
+	position: relative;
+}
 .homePageWrapper .sliderWrapper {
 	float: left;
 	width: 100%;

@@ -15,7 +15,7 @@ if(isEdit){ %>
     while(itr.hasNext()){
 		Resource tempRes = itr.next();
 %>        
-        <sling:include path="<%= tempRes.getPath() %>" />;
+        <sling:include path="<%= tempRes.getPath() %>" />
 <%    }
 }
 
