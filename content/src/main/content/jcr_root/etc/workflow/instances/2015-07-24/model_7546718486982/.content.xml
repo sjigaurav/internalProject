@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Workflow"
+    jcr:uuid="a608dca7-b7c0-4217-a51f-241612252020"
+    sling:resourceType="cq/workflow/components/instance"
+    endTime="{Date}2015-07-24T23:51:33.648+05:30"
+    initiator="admin"
+    modelId="/etc/workflow/models/dam-xmp-writeback/jcr:content/model"
+    modelVersion="1.0"
+    startTime="{Date}2015-07-24T23:51:33.415+05:30"
+    status="ABORTED">
+    <data jcr:primaryType="cq:WorkflowData">
+        <metaData
+            jcr:primaryType="nt:unstructured"
+            currentJobs=""
+            userId="admin"/>
+        <payload
+            jcr:primaryType="cq:Payload"
+            path="{Path}/content/dam/projects/outdoors/cover/jcr:content/metadata"/>
+    </data>
+    <history jcr:primaryType="nt:unstructured">
+        <_x0031_437762093514
+            jcr:primaryType="nt:unstructured"
+            date="{Date}2015-07-24T23:51:33.515+05:30"
+            event="WorkflowCompleted"
+            message=""
+            user="admin">
+            <workItem
+                jcr:primaryType="cq:WorkItem"
+                sling:resourceType="cq/workflow/components/workitem"
+                assignee="system"
+                endTime="{Date}2015-07-24T23:51:33.515+05:30"
+                nodeId="node0"
+                startTime="{Date}2015-07-24T23:51:33.514+05:30"
+                status="COMPLETE"
+                workflowId="/etc/workflow/instances/2015-07-24/model_7546718486982">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    archived="{Boolean}true"/>
+            </workItem>
+        </_x0031_437762093514>
+        <_x0031_437762093620
+            jcr:primaryType="nt:unstructured"
+            date="{Date}2015-07-24T23:51:33.621+05:30"
+            event="WorkflowCompleted"
+            message=""
+            user="admin">
+            <workItem
+                jcr:primaryType="cq:WorkItem"
+                sling:resourceType="cq/workflow/components/workitem"
+                assignee="system"
+                endTime="{Date}2015-07-24T23:51:33.621+05:30"
+                nodeId="node1"
+                startTime="{Date}2015-07-24T23:51:33.618+05:30"
+                status="COMPLETE"
+                workflowId="/etc/workflow/instances/2015-07-24/model_7546718486982">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    archived="{Boolean}true"
+                    historyEntryPath="/etc/workflow/instances/2015-07-24/model_7546718486982/history/1437762093514"/>
+            </workItem>
+        </_x0031_437762093620>
+    </history>
+    <metaData
+        jcr:primaryType="nt:unstructured"
+        currentJobs=""
+        userId="admin"/>
+    <workItems jcr:primaryType="nt:unstructured"/>
+</jcr:root>

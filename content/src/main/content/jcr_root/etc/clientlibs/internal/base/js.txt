@@ -3,3 +3,4 @@ modernizr-2.6.2.min.js
 respond.js
 plugins.js
 main.js
+multifield.js    

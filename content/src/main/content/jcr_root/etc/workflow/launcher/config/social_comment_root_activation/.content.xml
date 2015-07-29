@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:WorkflowLauncher"
+    condition=""
+    description="Activate social comment root."
+    enabled="{Boolean}false"
+    eventType="{Long}1"
+    glob="/content/usergenerated(/.*)"
+    nodetype="cq:CommentContent"
+    runModes="author"
+    workflow="/etc/workflow/models/social/commons/comment_root_activation/jcr:content/model"/>

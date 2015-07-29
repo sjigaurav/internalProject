@@ -1,0 +1,44 @@
+/*
+ *
+ * ADOBE CONFIDENTIAL
+ * __________________
+ *
+ *  Copyright 2013 Adobe Systems Incorporated
+ *  All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+
+
+function check() {
+    var UGC_PATH = "/content/usergenerated";
+    var TALLY_COMPONENT_TYPE = "social/tally/components/";
+    var SLING_RESOURCE_TYPE = "sling:resourceType";
+    log.debug("is Tally Component" + workflowData.getPayloadType());
+
+    if (workflowData.getPayloadType() == "JCR_PATH") {
+        var path = workflowData.getPayload().toString();
+        var retVal = false;
+        if (path.indexOf(UGC_PATH) == 0) {
+            var node = workflowSession.getSession().getItem(path);
+            if(node.hasProperty(SLING_RESOURCE_TYPE)){
+                var resourceType = node.getProperty(SLING_RESOURCE_TYPE).getString();
+                if(resourceType.indexOf(TALLY_COMPONENT_TYPE) === 0) {
+                    retVal = true;
+                }
+            }
+        }
+        log.debug("is Tally Component:" + retVal + " (" +  path + ")");
+        return retVal;
+    } else {
+        // should not happen
+        return false;
+    }
+}

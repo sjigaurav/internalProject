@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:WorkflowLauncher"
+    condition="sling:resourceType==social/messaging/message"
+    description="Replicating the Private Message node on modification"
+    enabled="{Boolean}true"
+    eventType="{Long}16"
+    excludeList="cq:lastReplicated,cq:lastReplicatedBy,cq:lastReplicationAction,jcr:mixinTypes"
+    glob="/home/users(/.*)"
+    nodetype="nt:unstructured"
+    runModes="author"
+    workflow="/etc/workflow/models/Activate_Content/jcr:content/model"/>

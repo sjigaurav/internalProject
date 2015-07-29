@@ -1,0 +1,14 @@
+From: ${email.from}
+To: ${initiator.email}
+Subject: [CQ5 Forum] Subscription for "${data.subscribable.title}"
+
+Dear ${initiator.name},
+
+You've been subscribed to the forum/topic "${data.subscribable.subject}".
+URL: "${host.prefix}${data.subscribable.url}"
+
+You will be notified of any changes to that forum/topic.
+
+-----------------------------------------
+This is an automated message. Do not reply.
+-----------------------------------------

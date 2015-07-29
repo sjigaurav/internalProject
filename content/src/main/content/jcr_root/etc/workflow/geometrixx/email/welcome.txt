@@ -1,0 +1,32 @@
+From: Geometrixx Admin <geometrixx@day.com>
+To: ${payload.email}
+Subject: Signup for ${payload.fullname}
+
+Dear ${payload.fullname}
+
+Please find your account here: http://www.day.com/
+Your password is: ${payload.temppassword}
+
+regards
+Geometrixx Team
+
+
+-----------------------------------------
+How this template works:
+
+Use the email headers you need and separate them with a blank line
+from the message body. For example, to add a BCC address, add:
+
+BCC: monitor@yourcompany.com
+
+you can replace variables using the ${...} syntax.
+You can get a list of all workflow related variables by including the "properties"
+variable (see example below).
+
+You can access all properties of a JCR payload (i.e. a JCR node) by using the
+"payload." prefix. for example, if you create a 'title' property with a form,
+you can include it with ${payload.title}.
+
+-----------------------------------------
+All Workflow properties:
+${properties}

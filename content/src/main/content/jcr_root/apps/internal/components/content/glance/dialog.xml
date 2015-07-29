@@ -11,19 +11,19 @@
                 jcr:primaryType="cq:Panel"
                 title="basic">
                 <items jcr:primaryType="cq:WidgetCollection">
-                    <prop2
+                    <heading
                         jcr:primaryType="nt:unstructured"
                         fieldLabel="Heading"
                         name="./heading"
                         validateOnBlur="true"
                         xtype="textfield"/>
-                    <prop3
+                    <subheading
                         jcr:primaryType="nt:unstructured"
                         fieldLabel="Subheading"
                         name="./subheading"
                         validateOnBlur="true"
                         xtype="textfield"/>
-                    <prop4
+                    <description
                         jcr:primaryType="nt:unstructured"
                         fieldLabel="Description"
                         name="./description"
@@ -39,7 +39,7 @@
                                 jcr:primaryType="nt:unstructured"
                                 features="*"/>
                         </rtePlugins>
-                    </prop4>
+                    </description>
                 </items>
             </tab1>
         </items>

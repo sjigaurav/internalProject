@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Workflow"
+    jcr:uuid="e3991e02-b56f-46a3-afe7-bcb9c2f8a663"
+    sling:resourceType="cq/workflow/components/instance"
+    endTime="{Date}2015-07-25T10:20:48.818+05:30"
+    initiator="admin"
+    modelId="/etc/workflow/models/dam/update_asset/jcr:content/model"
+    modelVersion="1.0"
+    startTime="{Date}2015-07-25T10:19:52.603+05:30"
+    status="ABORTED">
+    <data jcr:primaryType="cq:WorkflowData">
+        <metaData
+            jcr:primaryType="nt:unstructured"
+            currentJobs=""
+            userId="admin"/>
+        <payload
+            jcr:primaryType="cq:Payload"
+            path="{Path}/content/dam/geometrixx-outdoors/articles/yes-i-ski-like-a-girl.jpg/jcr:content/renditions/original"/>
+    </data>
+    <history jcr:primaryType="nt:unstructured">
+        <_x0031_437799793249
+            jcr:primaryType="nt:unstructured"
+            date="{Date}2015-07-25T10:19:53.253+05:30"
+            event="WorkflowCompleted"
+            message=""
+            user="admin">
+            <workItem
+                jcr:primaryType="cq:WorkItem"
+                sling:resourceType="cq/workflow/components/workitem"
+                assignee="system"
+                endTime="{Date}2015-07-25T10:19:53.253+05:30"
+                nodeId="node0"
+                startTime="{Date}2015-07-25T10:19:53.249+05:30"
+                status="COMPLETE"
+                workflowId="/etc/workflow/instances/2015-07-25/model_3207703988746">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    archived="{Boolean}true"/>
+            </workItem>
+        </_x0031_437799793249>
+    </history>
+    <metaData
+        jcr:primaryType="nt:unstructured"
+        currentJobs=""
+        userId="admin"/>
+    <workItems jcr:primaryType="nt:unstructured"/>
+</jcr:root>

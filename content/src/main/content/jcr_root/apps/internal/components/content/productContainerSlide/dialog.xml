@@ -31,33 +31,9 @@
                         xtype="textfield"/>
                     <prop5
                         jcr:primaryType="nt:unstructured"
-                        allowBlank="false"
-                        blankText=""
-                        disabled="false"
-                        emptyText=""
-                        fieldDescription=""
                         fieldLabel="Button"
-                        fieldSubLabel=""
-                        grow="false"
-                        hideLabel="false"
-                        hideMode=""
-                        inputType=""
-                        maxLength=""
-                        maxLengthText=""
-                        minLength=""
-                        minLengthText=""
-                        msgTarget=""
                         name="./button"
-                        readOnly="false"
-                        regex=""
-                        regexText=""
-                        selectOnFocus="false"
                         validateOnBlur="true"
-                        validationDelay=""
-                        validationEvent=""
-                        validator=""
-                        vtype=""
-                        vtypeText=""
                         xtype="textfield"/>
                     <prop6
                         jcr:primaryType="nt:unstructured"
@@ -65,12 +41,17 @@
                         name="./secondbutton"
                         validateOnBlur="true"
                         xtype="textfield"/>
+                    <URL
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="URL"
+                        name="./url"
+                        xtype="pathfield"/>
                 </items>
             </tab1>
             <image
                 jcr:primaryType="cq:Widget"
                 cropParameter="./imageCrop"
-                ddGroups="\[&quot;media&quot;]"
+                ddGroups="[media]"
                 fileNameParameter="./fileName"
                 fileReferenceParameter="./fileReference"
                 mapParameter="./imageMap"

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Workflow"
+    jcr:uuid="42661de4-e34c-48a8-b43f-b4becac19f38"
+    sling:resourceType="cq/workflow/components/instance"
+    endTime="{Date}2015-07-25T10:22:30.954+05:30"
+    initiator="admin"
+    modelId="/etc/workflow/models/social/commons/comment-activity-handler/jcr:content/model"
+    modelVersion="1.0"
+    startTime="{Date}2015-07-25T10:22:20.252+05:30"
+    status="COMPLETED">
+    <data jcr:primaryType="cq:WorkflowData">
+        <metaData
+            jcr:primaryType="nt:unstructured"
+            currentJobs=""
+            userId="admin"/>
+        <payload
+            jcr:primaryType="cq:Payload"
+            path="{Path}/content/usergenerated/etc/commerce/products/geometrixx-outdoors/equipment/surfing/lagos-mini-longboard/jcr:content/rating/tallyresponses/1Bucket/aaron.mcdonald@mailinator.com/1Bucket/R1360942023052"/>
+    </data>
+    <history jcr:primaryType="nt:unstructured">
+        <_x0031_437799940345
+            jcr:primaryType="nt:unstructured"
+            date="{Date}2015-07-25T10:22:20.345+05:30"
+            event="WorkflowCompleted"
+            message=""
+            user="admin">
+            <workItem
+                jcr:primaryType="cq:WorkItem"
+                sling:resourceType="cq/workflow/components/workitem"
+                assignee="system"
+                endTime="{Date}2015-07-25T10:22:20.345+05:30"
+                nodeId="node0"
+                startTime="{Date}2015-07-25T10:22:20.344+05:30"
+                status="COMPLETE"
+                workflowId="/etc/workflow/instances/2015-07-25_1/model_3355353154102">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    archived="{Boolean}true"/>
+            </workItem>
+        </_x0031_437799940345>
+        <_x0031_437799950952
+            jcr:primaryType="nt:unstructured"
+            date="{Date}2015-07-25T10:22:30.952+05:30"
+            event="WorkflowCompleted"
+            message=""
+            user="admin">
+            <workItem
+                jcr:primaryType="cq:WorkItem"
+                sling:resourceType="cq/workflow/components/workitem"
+                assignee="system"
+                endTime="{Date}2015-07-25T10:22:30.952+05:30"
+                nodeId="node1"
+                startTime="{Date}2015-07-25T10:22:30.945+05:30"
+                status="COMPLETE"
+                workflowId="/etc/workflow/instances/2015-07-25_1/model_3355353154102">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    archived="{Boolean}true"
+                    historyEntryPath="/etc/workflow/instances/2015-07-25_1/model_3355353154102/history/1437799940345"/>
+            </workItem>
+        </_x0031_437799950952>
+    </history>
+    <metaData
+        jcr:primaryType="nt:unstructured"
+        currentJobs=""
+        userId="admin"/>
+    <workItems jcr:primaryType="nt:unstructured"/>
+</jcr:root>

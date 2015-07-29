@@ -1,0 +1,99 @@
+/*
+ *
+ * ADOBE CONFIDENTIAL
+ * __________________
+ *
+ *  Copyright 2012 Adobe Systems Incorporated
+ *  All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+ /***
+ * Workflow process to remove social relationship 
+ ***/
+
+var TYPE_JCR_PATH = "JCR_PATH";
+var USER_ID = Packages.com.adobe.cq.social.commons.ToggleUtil.PN_WORKFLOW_METADATA_USER;
+var RELATIONSHIP = Packages.com.adobe.cq.social.commons.ToggleUtil.PN_WORKFLOW_METADATA_APPROVAL;
+var RESOURCE = Packages.com.adobe.cq.social.commons.ToggleUtil.PN_WORKFLOW_METADATA_RESOURCE;
+
+var workflowData = workItem.getWorkflowData();
+if(workflowData.getPayloadType() == TYPE_JCR_PATH){
+    var path = workflowData.getPayload().toString();
+    var session = workflowSession.getSession();
+    var resourceResolver = sling.getService(Packages.org.apache.sling.jcr.resource.JcrResourceResolverFactory).getResourceResolver(session);
+    var socialGraph = resourceResolver.adaptTo(Packages.com.adobe.granite.socialgraph.SocialGraph);
+    var relationShip = workflowData.getMetaDataMap().get(RELATIONSHIP).getString();
+    var pm = resourceResolver.adaptTo(Packages.com.day.cq.wcm.api.PageManager);
+    var ups = sling.getService(Packages.com.adobe.granite.security.user.UserPropertiesService);
+    var repository = sling.getService(Packages.org.apache.sling.jcr.api.SlingRepository);
+    var groupService = sling.getService(Packages.com.adobe.cq.social.group.api.GroupService);
+
+    try {
+        // get current user id
+        var userPath = workflowData.getMetaDataMap().get(USER_ID).getString();
+        var c_userId = resourceResolver.resolve(userPath).adaptTo(Packages.org.apache.jackrabbit.api.security.user.Authorizable).getID();
+
+        // get requester's id
+        var target = Packages.org.apache.sling.api.resource.ResourceUtil.getParent(resourceResolver.resolve(path)).adaptTo(Packages.org.apache.jackrabbit.api.security.user.Authorizable);
+        var requesterId = target.getID();
+
+        // get community group ids
+        var resPath = workflowData.getMetaDataMap().get(RESOURCE).getString();
+        var communityPagePath = Packages.com.adobe.cq.social.group.api.GroupUtil.getCommunityRootPagePath(resourceResolver, resPath);
+        var t_groupId = "";
+        var adminGroupId = "";
+        var communityPage = null;
+        if(communityPagePath != null){
+            communityPage = pm.getPage(communityPagePath);
+        }
+        if(communityPage != null){
+            t_groupId = communityPage.getProperties().get("membergroup", "");
+            if(!("".equals(t_groupId)) && t_groupId.lastIndexOf("/")>=0) {
+                t_groupId = t_groupId.substring(t_groupId.lastIndexOf("/")+1);            
+            }
+
+            adminGroupId = communityPage.getProperties().get("admingroup", "");
+            if(!("".equals(adminGroupId)) && adminGroupId.lastIndexOf("/")>=0) {
+                adminGroupId = adminGroupId.substring(adminGroupId.lastIndexOf("/")+1);
+            }
+        }
+
+        // verify if current user is the group admin,
+        // then delete relation between group and pending member
+        if("".equals(t_groupId) || "".equals(adminGroupId)) {
+            log.error("cannot find group name at "+path);
+        } else if(!Packages.com.adobe.cq.social.group.api.GroupUtil.isMember(ups, resourceResolver, c_userId, adminGroupId)) {
+            log.error("user "+c_userId+" has no permission to approve pending member request of "+t_groupId);
+        } else if(groupService == null){
+            log.error("cannot get com.adobe.cq.social.group.api.GroupService ");
+        } else {
+            // add to group 
+            groupService.addGroupMember(resolver, t_groupId, requesterId);
+
+            // remove pending-member relation
+            var pendingMemberNode = socialGraph.getNode(requesterId);
+            var groupNode = socialGraph.getNode(t_groupId);
+
+            var graphMembers = groupNode.getRelationships(Packages.com.adobe.granite.socialgraph.Direction.OUTGOING, relationShip).iterator();
+            while(graphMembers.hasNext()){
+                var relation = graphMembers.next();
+                if(relation.getEndNode().getId().equals(pendingMemberNode.getId())) {
+                    relation[ 'delete' ]();
+                    break;  
+                }
+            }
+            socialGraph.save();
+        }
+
+    }catch(e){
+        log.error(e);
+    }                  
+}

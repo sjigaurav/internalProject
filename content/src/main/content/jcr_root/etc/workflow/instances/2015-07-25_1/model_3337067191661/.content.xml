@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Workflow"
+    jcr:uuid="33a78f2a-25bc-4df4-aca2-8f37a90c1f9b"
+    sling:resourceType="cq/workflow/components/instance"
+    endTime="{Date}2015-07-25T10:22:03.062+05:30"
+    initiator="admin"
+    modelId="/etc/workflow/models/social/tally/social_tally_component_activation/jcr:content/model"
+    modelVersion="1.0"
+    startTime="{Date}2015-07-25T10:22:01.966+05:30"
+    status="COMPLETED">
+    <data jcr:primaryType="cq:WorkflowData">
+        <metaData
+            jcr:primaryType="nt:unstructured"
+            currentJobs=""
+            userId="admin"/>
+        <payload
+            jcr:primaryType="cq:Payload"
+            path="{Path}/content/usergenerated/content/geometrixx-outdoors/en/support/jcr:content/forum/1_ciot/pley-is_the_lagosminilo/1_tosp/rdcl-you_may_alsowantto/votes"/>
+    </data>
+    <history jcr:primaryType="nt:unstructured">
+        <_x0031_437799922063
+            jcr:primaryType="nt:unstructured"
+            date="{Date}2015-07-25T10:22:02.064+05:30"
+            event="WorkflowCompleted"
+            message=""
+            user="admin">
+            <workItem
+                jcr:primaryType="cq:WorkItem"
+                sling:resourceType="cq/workflow/components/workitem"
+                assignee="system"
+                endTime="{Date}2015-07-25T10:22:02.063+05:30"
+                nodeId="node0"
+                startTime="{Date}2015-07-25T10:22:01.997+05:30"
+                status="COMPLETE"
+                workflowId="/etc/workflow/instances/2015-07-25_1/model_3337067191661">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    archived="{Boolean}true"/>
+            </workItem>
+        </_x0031_437799922063>
+        <_x0031_437799923059
+            jcr:primaryType="nt:unstructured"
+            date="{Date}2015-07-25T10:22:03.059+05:30"
+            event="WorkflowCompleted"
+            message=""
+            user="admin">
+            <workItem
+                jcr:primaryType="cq:WorkItem"
+                sling:resourceType="cq/workflow/components/workitem"
+                assignee="system"
+                endTime="{Date}2015-07-25T10:22:03.059+05:30"
+                nodeId="node3"
+                startTime="{Date}2015-07-25T10:22:02.898+05:30"
+                status="COMPLETE"
+                workflowId="/etc/workflow/instances/2015-07-25_1/model_3337067191661">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    archived="{Boolean}true"
+                    historyEntryPath="/etc/workflow/instances/2015-07-25_1/model_3337067191661/history/1437799922063"/>
+            </workItem>
+        </_x0031_437799923059>
+    </history>
+    <metaData
+        jcr:primaryType="nt:unstructured"
+        currentJobs=""
+        userId="admin"/>
+    <orTab jcr:primaryType="nt:unstructured">
+        <node1
+            jcr:primaryType="cq:OrTab"
+            workflowId="1437799921997"/>
+    </orTab>
+    <workItems jcr:primaryType="nt:unstructured"/>
+</jcr:root>

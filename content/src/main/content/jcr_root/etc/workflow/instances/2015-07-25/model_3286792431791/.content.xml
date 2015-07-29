@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Workflow"
+    jcr:uuid="3523a15c-3117-4902-97c6-ee69ce477484"
+    sling:resourceType="cq/workflow/components/instance"
+    endTime="{Date}2015-07-25T10:21:11.766+05:30"
+    initiator="admin"
+    modelId="/etc/workflow/models/social/tally/social_tally_component_activation/jcr:content/model"
+    modelVersion="1.0"
+    startTime="{Date}2015-07-25T10:21:11.693+05:30"
+    status="COMPLETED">
+    <data jcr:primaryType="cq:WorkflowData">
+        <metaData
+            jcr:primaryType="nt:unstructured"
+            userId="admin"/>
+        <payload
+            jcr:primaryType="cq:Payload"
+            path="{Path}/content/usergenerated/content/geometrixx-outdoors/en/community/hiking/jcr:content/activities/public"/>
+    </data>
+    <history jcr:primaryType="nt:unstructured">
+        <_x0031_437799871764
+            jcr:primaryType="nt:unstructured"
+            date="{Date}2015-07-25T10:21:11.765+05:30"
+            event="WorkflowCompleted"
+            message=""
+            user="admin">
+            <workItem
+                jcr:primaryType="cq:WorkItem"
+                sling:resourceType="cq/workflow/components/workitem"
+                assignee="system"
+                endTime="{Date}2015-07-25T10:21:11.765+05:30"
+                nodeId="node0"
+                startTime="{Date}2015-07-25T10:21:11.762+05:30"
+                status="COMPLETE"
+                workflowId="/etc/workflow/instances/2015-07-25/model_3286792431791">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    archived="{Boolean}true"/>
+            </workItem>
+        </_x0031_437799871764>
+    </history>
+    <metaData jcr:primaryType="nt:unstructured"/>
+    <workItems jcr:primaryType="nt:unstructured"/>
+</jcr:root>

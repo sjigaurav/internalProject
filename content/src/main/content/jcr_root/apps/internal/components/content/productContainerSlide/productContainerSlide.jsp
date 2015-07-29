@@ -5,24 +5,22 @@
     String SubHeading = properties.get("subheading","");
     String Description = properties.get("description","");
 	String Button = properties.get("button","");
+	String URL = properties.get("url","");
 	String SecondButton = properties.get("secondbutton","");
 	String Image = properties.get("fileReference","");
 
     String css="";
-    if(!isEdit){
-        css="slick-slide";
-    }
+
+	css = (!isEdit) ? "slick-slide" : "";
+
     if(isEdit){ %>
     	This is the slide component
-   <% } 
-
-
-
+   <% }
 %>
 
 <div class="<%=css %>">
     <div class="col"> <img src="<%= Image %>" id="prdThumb" alt="">
-        <div class="hpCarouselBgIcon icn1"></div>
+        <img src="<%=URL%>" class='<%= (URL.equals(""))?"" :"hpCarouselBgIcon" %> icn1' />
     </div>
     <div class="col">
         <div class="sliderWrapper">

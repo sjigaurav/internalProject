@@ -1,0 +1,48 @@
+var  role = workItem.getNode().getMetaDataMap().get("argTaskRole", "");
+
+var groupId;
+if (role == "Owner") {
+
+	groupId = "project.group.owner";
+
+} else if (role == "Observer") {
+
+	groupId = "project.group.observer";
+
+} else if (role == "Editor") {
+
+   	groupId = "project.group.editor";
+
+} else if (role == "Creative Director") {
+
+	groupId = "project.group.creativedirectors";
+
+} else if (role == "Marketing Manager") {
+
+	groupId = "project.group.marketingmanagers";
+
+} else if (role == "Photographer") {
+
+	groupId = "project.group.photographers";
+
+} else if (role == "Photo Retoucher") {
+
+	groupId = "project.group.photoretouchers";
+
+} else if (role == "Reviewer") {
+
+	groupId = "project.group.reviewers";
+
+} else if (role == "Social Media Marketer") {
+
+	groupId = "project.group.socialmediamarketers";
+
+} else {
+    // no idea what to
+    assignee = "admin";
+}
+log.info("assigning task to role :" + role);
+if (groupId && task.getCurrentAssignee()==null) {
+   
+	task.setCurrentAssignee(workflowData.getMetaDataMap().get(groupId, ""));
+}

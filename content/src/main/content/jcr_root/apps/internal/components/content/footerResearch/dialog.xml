@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Heading"
+                        name="./heading"
+                        validateOnBlur="true"
+                        vtypeText=""
+                        xtype="textfield"/>
+                    <firstSubHeading
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="FirstSubHeading"
+                        name="./firstsubheading"
+                        xtype="textfield"/>
+                    <secondSubHeading
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="SecondSubHeading"
+                        name="./secondsubheading"
+                        xtype="textfield"/>
+                    <link
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Click the '+' to add a new page"
+                        fieldLabel="User Selection"
+                        name="./link"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            border="true"
+                            hideLabel="{Boolean}true"
+                            layout="form"
+                            padding="10px"
+                            width="1000"
+                            xtype="multifiedpanel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <site
+                                    jcr:primaryType="cq:Widget"
+                                    dName="site"
+                                    fieldLabel="Site"
+                                    rootPath="/content"
+                                    type="select"
+                                    xtype="selection">
+                                    <options jcr:primaryType="cq:WidgetCollection">
+                                        <facebook
+                                            jcr:primaryType="nt:unstructured"
+                                            value="facebook"/>
+                                        <twitter
+                                            jcr:primaryType="nt:unstructured"
+                                            value="twitter"/>
+                                    </options>
+                                </site>
+                                <link
+                                    jcr:primaryType="cq:Widget"
+                                    dName="link"
+                                    fieldLabel="Link"
+                                    rootPath="/content"
+                                    xtype="pathfield"/>
+                            </items>
+                        </fieldConfig>
+                    </link>
+                    <list
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Click the '+' to add a new page"
+                        fieldLabel="User Selection"
+                        name="./list"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            border="true"
+                            hideLabel="{Boolean}true"
+                            layout="form"
+                            padding="10px"
+                            width="1000"
+                            xtype="multifiedpanel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <title
+                                    jcr:primaryType="cq:Widget"
+                                    dName="title"
+                                    fieldLabel="List Element"
+                                    rootPath="/content"
+                                    xtype="textfield"/>
+                                <link
+                                    jcr:primaryType="cq:Widget"
+                                    dName="listLink"
+                                    fieldLabel="Link"
+                                    rootPath="/content"
+                                    xtype="pathfield"/>
+                            </items>
+                        </fieldConfig>
+                    </list>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

@@ -30,3 +30,4 @@ if(!isEdit){
 %>
     </div>
 </div>
+<div style="clear:both;"></div>

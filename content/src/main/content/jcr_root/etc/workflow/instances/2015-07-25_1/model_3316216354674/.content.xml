@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Workflow"
+    jcr:uuid="fc53440e-6810-4a3c-9c53-12612dcb8d2c"
+    sling:resourceType="cq/workflow/components/instance"
+    endTime="{Date}2015-07-25T10:21:42.549+05:30"
+    initiator="admin"
+    modelId="/etc/workflow/models/social/tally/social_tally_component_activation/jcr:content/model"
+    modelVersion="1.0"
+    startTime="{Date}2015-07-25T10:21:41.116+05:30"
+    status="COMPLETED">
+    <data jcr:primaryType="cq:WorkflowData">
+        <metaData
+            jcr:primaryType="nt:unstructured"
+            currentJobs=""
+            userId="admin"/>
+        <payload
+            jcr:primaryType="cq:Payload"
+            path="{Path}/content/usergenerated/content/geometrixx-outdoors/en/support/jcr:content/forum/1_ciot/if0q-i_would_liketoknow/1_tosp/fzkm-our_helmetsareput/votes"/>
+    </data>
+    <history jcr:primaryType="nt:unstructured">
+        <_x0031_437799901253
+            jcr:primaryType="nt:unstructured"
+            date="{Date}2015-07-25T10:21:41.254+05:30"
+            event="WorkflowCompleted"
+            message=""
+            user="admin">
+            <workItem
+                jcr:primaryType="cq:WorkItem"
+                sling:resourceType="cq/workflow/components/workitem"
+                assignee="system"
+                endTime="{Date}2015-07-25T10:21:41.254+05:30"
+                nodeId="node0"
+                startTime="{Date}2015-07-25T10:21:41.197+05:30"
+                status="COMPLETE"
+                workflowId="/etc/workflow/instances/2015-07-25_1/model_3316216354674">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    archived="{Boolean}true"/>
+            </workItem>
+        </_x0031_437799901253>
+        <_x0031_437799902547
+            jcr:primaryType="nt:unstructured"
+            date="{Date}2015-07-25T10:21:42.548+05:30"
+            event="WorkflowCompleted"
+            message=""
+            user="admin">
+            <workItem
+                jcr:primaryType="cq:WorkItem"
+                sling:resourceType="cq/workflow/components/workitem"
+                assignee="system"
+                endTime="{Date}2015-07-25T10:21:42.548+05:30"
+                nodeId="node3"
+                startTime="{Date}2015-07-25T10:21:42.289+05:30"
+                status="COMPLETE"
+                workflowId="/etc/workflow/instances/2015-07-25_1/model_3316216354674">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    archived="{Boolean}true"
+                    historyEntryPath="/etc/workflow/instances/2015-07-25_1/model_3316216354674/history/1437799901253"/>
+            </workItem>
+        </_x0031_437799902547>
+    </history>
+    <metaData
+        jcr:primaryType="nt:unstructured"
+        currentJobs=""
+        userId="admin"/>
+    <orTab jcr:primaryType="nt:unstructured">
+        <node1
+            jcr:primaryType="cq:OrTab"
+            workflowId="1437799901197"/>
+    </orTab>
+    <workItems jcr:primaryType="nt:unstructured"/>
+</jcr:root>
