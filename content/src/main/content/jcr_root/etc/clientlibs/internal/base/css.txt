@@ -5,3 +5,4 @@ slick-slider.css
 jquery.fancybox.css
 main.css
 home-page.css
+category-listing.css

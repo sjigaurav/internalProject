@@ -1,6 +1,6 @@
 <%@include file="/apps/internal/global.jsp" %>
 <div class="width100Per">
-    <sling:include path="/content/Chairman/jcr:content/par/conainer"/>
+    <sling:include path="/content/Chairman/jcr:content/par/container"/>
     <div class="homePageWrapper">
         <div class="container">
             <div class="master">
@@ -10,19 +10,4 @@
             </div>
         </div>
 </div>
-<script>
-    $(function(){
-        $('.spotlightWrapper .slick-slider').slick({
-            dots: true,
-            arrows:false
-        });
-        $('.havellsAtGlance .slick-slider').slick({
-            dots: true,
-            arrows:false
-        });
-        $('.hpCarouselBg .slick-slider').slick({
-            dots: false,
-            arrows:true
-        });
-    });
-</script>
+<div style="clear:both;"></div>

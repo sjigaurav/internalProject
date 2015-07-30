@@ -78,8 +78,7 @@
                                 <div class="cartValue">0</div>
                             </li>
                             <li>
-                                <div class="label">Nse</div>
-                                <div class="nseValue up">289.05 <i class="fa fa-arrow-up"></i></div>
+								<cq:include path="logo" resourceType="/apps/internal/components/content/stockUpdate"/>
                             </li>
                         </ul>
                     </div>

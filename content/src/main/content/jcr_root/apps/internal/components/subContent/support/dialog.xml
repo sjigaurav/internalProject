@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <basic
+                jcr:primaryType="cq:Panel"
+                title="Basic">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <list
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Click the '+' to add a new page"
+                        fieldLabel="User Selection"
+                        name="./list"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            border="true"
+                            hideLabel="{Boolean}true"
+                            layout="form"
+                            padding="10px"
+                            width="1000"
+                            xtype="multifiedpanel">
+                            <items jcr:primaryType="cq:WidgetCollection">
+                                <title
+                                    jcr:primaryType="cq:Widget"
+                                    dName="title"
+                                    fieldLabel="List Element"
+                                    rootPath="/content"
+                                    xtype="textfield"/>
+                                <link
+                                    jcr:primaryType="cq:Widget"
+                                    dName="link"
+                                    fieldLabel="Link"
+                                    rootPath="/content"
+                                    xtype="pathfield"/>
+                            </items>
+                        </fieldConfig>
+                    </list>
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Heading"
+                        name="./heading"
+                        validateOnBlur="true"
+                        xtype="richtext">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <misctools
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                        </rtePlugins>
+                    </heading>
+                </items>
+            </basic>
+            <image
+                jcr:primaryType="cq:Widget"
+                cropParameter="./imageCrop"
+                ddGroups="[media]"
+                fileNameParameter="./fileName"
+                fileReferenceParameter="./fileReference"
+                mapParameter="./imageMap"
+                name="./file"
+                requestSuffix=".img.png"
+                rotateParameter="./imageRotate"
+                title="Image"
+                xtype="html5smartimage"/>
+        </items>
+    </items>
+</jcr:root>
