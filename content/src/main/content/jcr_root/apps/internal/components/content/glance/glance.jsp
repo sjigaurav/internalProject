@@ -1,6 +1,6 @@
 <%@include file="/apps/internal/global.jsp"%>
 <%@page session="false" %>
-<% 
+<%
     String Heading = properties.get("heading","");
     String SubHeading = properties.get("subheading","");
     String Description = properties.get("description","");
@@ -8,8 +8,8 @@
     if(!isEdit){
         css = "slick-slide";
     }
-if(isEdit){ %>
-	This is the glancecomponent..
+    if(isEdit){ %>
+This is the glancecomponent..
 <% }
 %>
 <div class="<%=css %>">

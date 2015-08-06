@@ -1,12 +1,9 @@
 <%@include file="/apps/internal/global.jsp"%>
 <%@page session="false" %>
-<%
-  String Description = properties.get("description","");
-  String Date = properties.get("date","");;
 
-if(isEdit){ %>
-	This is newswrapSlide component.
-<% } %>
+<c:if test="${isEdit}">
+  This is newswrapSlide component.
+</c:if>
 
-<li><a href="javascript:;"><%= Description %> <span><%= Date %></span></a></li>
+<li><a href="javascript:;">"${properties.description}"<span>"${properties.date}"</span></a></li>
 <div style="clear:both;"></div>

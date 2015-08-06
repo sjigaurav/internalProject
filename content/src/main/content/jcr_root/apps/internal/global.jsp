@@ -29,3 +29,4 @@
 
 
 <cq:defineObjects />
+<c:set var="isEdit" value="<%=isEdit%>"/>

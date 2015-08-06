@@ -1,42 +1,39 @@
 <%@include file="/apps/internal/global.jsp"%>
 <%@page session="false" %>
 <%@page import="org.apache.sling.commons.json.JSONObject"%>
-<% 
-    String Heading = properties.get("heading","");
-    String FirstSubHeading = properties.get("firstsubheading","");
-	String SecondSubHeading = properties.get("secondsubheading","");
-	String[] List = properties.get("list",new String[0]);
-	String[] Link = properties.get("link",new String[0]);
-
-if(isEdit){
-	out.println("This is the footerResearch component..");
-}
+<%@ page import="com.internal.models.FooterResearch" %>
+<%@ page import="com.internal.models.UtilModel" %>
+<%@ page import="java.util.ArrayList" %>
+<%
+/*
+    FooterResearch footerResearch = new FooterResearch(properties);
+    ArrayList<UtilModel> utilModelArrayList =  footerResearch.getTitleList();
+    ArrayList<UtilModel> utilModelArrayLinkList =  footerResearch.getTitleLinkList();*/
 %>
-
+<c:if test="${isEdit}">
+    This is the footerResearch component..
+</c:if>
+<c:set var="footerResearch" value="<%= new FooterResearch(properties) %>" />
+<c:set var="utilModelArrayList" value="${footerResearch.titleList}" />
+<c:set var="utilModelArrayLinkList" value="${footerResearch.titleLinkList}" />
 <div class="col">
-    <div class="heading"><a href="javascript:;"><%=Heading%></a></div>
+    <div class="heading"><a href="javascript:;">${properties.heading}</a></div>
     <div class="linkWrapper">
-        
-        <% for(String list:List){
-				JSONObject json = new JSONObject(list);
-    %>
-        <a href="<%=json.getString("listLink")%>"><%=json.getString("title")%></a>
-        <%}%>
 
+        <c:forEach var="listData" items="${utilModelArrayList}" >
+            <a href="${listData.propertyTwo}">${listData.propertyOne}</a>
+        </c:forEach>
         <div class="footerWrapSocial">
             <div class="socialWrap">
-                <div><%=FirstSubHeading%></div>
+                <div>${properties.firstsubheading}</div>
                 <ul>
-					 <% for(String link:Link){
-						 JSONObject jsonObj = new JSONObject(link);
-    				%>
-                    <li><a href="<%=jsonObj.getString("link")%>"><i class="fa fa-<%=jsonObj.getString("site")%> fa-2x"></i></a></li>
+                    <c:forEach var="linkListData" items="${utilModelArrayLinkList}">
+                        <li><a href="${linkListData.propertyOne}"><i class="fa fa-${linkListData.propertyTwo} fa-2x"></i></a></li>
+                    </c:forEach>
                 </ul>
-                <%}%>
             </div>
-
             <div class="subscribeNewsletterWrap">
-                <div><%=SecondSubHeading%></div>
+                <div>${properties.secondsubheading}</div>
                 <form class="" id="newsLetterEmailId" method="get" action="">
                     <input name="" type="text" placeholder="Enter your email"  onfocus="if(this.value == this.defaultValue) { this.value=''; }" onblur="if (this.value == '') { this.value=this.defaultValue;}" required>
                     <input name="" type="button" value="Go" onClick="$('#newsLetterEmailId').submit()">

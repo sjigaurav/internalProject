@@ -4,22 +4,22 @@
 <div class="spotlightWrapper">
     <div class="slick-slider">
 
-<%
-if(isEdit){ %>
- <cq:include path="par" resourceType="foundation/components/parsys"/>
-<%
+        <%
+            if(isEdit){ %>
+        <cq:include path="par" resourceType="foundation/components/parsys"/>
+        <%
 
-}else{
-    Resource res = resourceResolver.getResource(resource.getPath()+"/par"); 
-    Iterator<Resource> itr=res.listChildren();
-    while(itr.hasNext()){
-		Resource tempRes = itr.next();
-%>        
+        }else{
+            Resource res = resourceResolver.getResource(resource.getPath()+"/par");
+            Iterator<Resource> itr=res.listChildren();
+            while(itr.hasNext()){
+                Resource tempRes = itr.next();
+        %>
         <sling:include path="<%= tempRes.getPath() %>" />
-<%    }
-}
+        <%    }
+        }
 
-%>
+        %>
     </div>
 </div>
 <div style="clear:both;"></div>
@@ -31,4 +31,3 @@ if(isEdit){ %>
         });
     });
 </script>
-

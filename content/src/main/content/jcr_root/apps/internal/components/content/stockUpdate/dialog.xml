@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <basic
+                jcr:primaryType="cq:Panel"
+                title="Basic">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <exchange
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Exchange"
+                        name="./exchange"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <url
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="URL"
+                        name="./url"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                </items>
+            </basic>
+        </items>
+    </items>
+</jcr:root>

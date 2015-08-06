@@ -1,27 +1,28 @@
 <%@include file="/apps/internal/global.jsp"%>
 <%@page session="false" %>
 <%@page import="org.apache.sling.commons.json.JSONObject"%>
+<%@ page import="com.internal.models.FooterCopyright" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.internal.models.UtilModel" %>
 <%
-String LeftSide = properties.get("leftSide","");
-String[] List = properties.get("list",new String[0]); //String[].class
-    int listLength=List.length;
-    int count=0;
+    FooterCopyright footerCopyright=new FooterCopyright(properties);
+    ArrayList<UtilModel>arrayList= footerCopyright.getLinkList();
 
-if(isEdit){ %>
-	this is footercopyright component
-<% } %>
+%>
+
+
+<c:set var="count" value=""/>
+<c:set var = "listLength" value="<%= arrayList.size() %>" />
+<c:set var="arrayList" value="<%=arrayList %>"/>
 <div class="copyRightWrapper">
-    <div class="left">&copy; <%=LeftSide%></div>
+    <div class="left">&copy;${properties.leftSide}</div>
     <div class="right">
-      <%  for(String list:List){
-          ++count;
-	JSONObject json = new JSONObject(list);
-    %>
-        <a href="<%=json.getString("link")%>.html"><%=json.getString("title")%></a>
-        <% if (count!=listLength){ %>
-        |
-
-      <%} } %>
+        <c:forEach var="loop" items="${arrayList}" varStatus="status">
+            <a href="${loop.propertyOne}.html">${loop.propertyTwo}</a>
+            <c:if test="${listLength != status.count}">
+                |
+                    </c:if>
+        </c:forEach>
     </div>
 </div>
 <div style="clear:both;"></div>

@@ -1,4 +1,4 @@
-<%@include file="/apps/internal/global.jsp"%>
+<%@include file="/apps/internal/global.jsp" %>
 <%@page session="false" %>
 <%
     String heading = properties.get("heading","");
@@ -10,13 +10,13 @@
     String rightCustomColor = properties.get("rightcustom","");
     String image = properties.get("fileReference","");
     String leftColor="",rightColor="";
-    if(!leftCustomColor.equals("")){ 
-		leftColor = leftCustomColor;
-	}else{
-		leftColor = leftColorfield;
-	}
+    if(!leftCustomColor.equals("")){
+        leftColor = leftCustomColor;
+    }else{
+        leftColor = leftColorfield;
+    }
 
-    if(!rightCustomColor.equals("")){ 
+    if(!rightCustomColor.equals("")){
         rightColor = rightCustomColor;
     }else{
         rightColor = rightColorfield;
@@ -30,17 +30,17 @@
             <div class="heading"><%= heading %></div>
             <p> <%= description %> </p>
             <div class="buttonWrapper">
-                <% 	for(int i=1;i<=button;i++ ){ 
-        				String path="button_"+i;   %>
-                		<cq:include path="<%= path %>" resourceType="/apps/internal/components/content/buttonComponent" />
-				<%  } %>
+                <% 	for(int i=1;i<=button;i++ ){
+                    String path="button_"+i;   %>
+                <cq:include path="<%= path %>" resourceType="/apps/internal/components/content/buttonComponent" />
+                <%  } %>
             </div>
         </div>
     </div>
-   <div class="spotlightContentRight pink" style = "background: #<%= rightColor %>"></div>
+    <div class="spotlightContentRight pink" style = "background: #<%= rightColor %>"></div>
 </div>
 
-            <% if(isEdit){ %>
+<% if(isEdit){ %>
 Enter Slide Details
 <div style="clear:both;"></div>
 <%}%>

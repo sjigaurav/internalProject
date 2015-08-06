@@ -1,33 +1,27 @@
-<%@include file="/apps/internal/global.jsp"%>
+<%@include file="/apps/internal/global.jsp" %>
 <%@page session="false" %>
-<%@page import="com.day.cq.wcm.api.WCMMode,java.util.Iterator" %>
+<%@page import="com.day.cq.wcm.api.WCMMode,java.util.Iterator,com.internal.models.ProductContainer" %>
+<%@ page import="java.util.ArrayList" %>
 
-<% String css = "";
 
-if(!isEdit){
-	css="cardRow hpCarouselBg";
-}%>
-<div class="<%= css %>">
+<c:set var="css" value="${(isEdit)? '':'cardRow hpCarouselBg'}"/>
+<div class="${css}">
     <div class="slick-slider">
-        <% if(isEdit){ %>
- 		<cq:include path="par" resourceType="foundation/components/parsys"/>
-        <div style="clear:both;"></div>
-<%
-    
-}else{
-    String r=resource.getPath();
-    Resource res = resourceResolver.getResource(r+"/par");
-    
-    Iterator<Resource> itr=res.listChildren();
-    while(itr.hasNext()){
-        Resource temp=itr.next();
-
-%>       
-            <sling:include path="<%= temp.getPath() %>" />
-<% 	}    
-}
-
-%>
+        <c:choose>
+            <c:when test="${isEdit}">
+                <cq:include path="par" resourceType="foundation/components/parsys"/>
+            </c:when>
+            <c:otherwise>
+                <%
+                    ProductContainer productContainer = new ProductContainer();
+                    ArrayList<String> paths = productContainer.getChildPar(resource);
+                %>
+                <c:set var="pathlist" value="<%=paths%>"/>
+                <c:forEach var="loop" items="${pathlist}">
+                    <sling:include path="${loop}"/>
+                </c:forEach>
+            </c:otherwise>
+        </c:choose>
     </div>
 </div>
 <div style="clear:both;"></div>

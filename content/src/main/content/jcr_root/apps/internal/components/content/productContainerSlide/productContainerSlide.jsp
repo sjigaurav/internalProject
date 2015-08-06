@@ -1,21 +1,22 @@
 <%@include file="/apps/internal/global.jsp"%>
 <%@page session="false" %>
-<% 
+
+<%
     String Heading = properties.get("heading","");
     String SubHeading = properties.get("subheading","");
     String Description = properties.get("description","");
-	String Button = properties.get("button","");
-	String URL = properties.get("url","");
-	String SecondButton = properties.get("secondbutton","");
-	String Image = properties.get("fileReference","");
+    String Button = properties.get("button","");
+    String URL = properties.get("url","");
+    String SecondButton = properties.get("secondbutton","");
+    String Image = properties.get("fileReference","");
 
     String css="";
 
-	css = (!isEdit) ? "slick-slide" : "";
+    css = (!isEdit) ? "slick-slide" : "";
 
     if(isEdit){ %>
-    	This is the slide component
-   <% }
+This is the slide component
+<% }
 %>
 
 <div class="<%=css %>">
@@ -36,3 +37,4 @@
         </div>
     </div>
 </div>
+

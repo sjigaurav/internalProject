@@ -1,17 +1,11 @@
 <%@include file="/apps/internal/global.jsp"%>
 <%@page session="false" %>
-<%
-    String css = "col"; 
-
-    if (isEdit){
-	css ="col1";
-}
-%>
+<c:set var="css" value="${(isEdit)?'col1':'col'}"/>
 <div class="cardRow">
-    <div class="<%= css %>">
+    <div class="${css}">
         <cq:include path="par1" resourceType="foundation/components/parsys"/>
     </div>
-    <div class="<%= css %>">
+    <div class="${css}">
         <cq:include path="par2" resourceType="foundation/components/parsys"/>
     </div>
 </div> 
