@@ -8,7 +8,7 @@
                     <div class="mobTxtWrap">Corporate Links</div>
                     <ul>
                         <%
-                        Resource wrap = resourceResolver.getResource("/content/home/topNavWrap/jcr:content/par");
+                        Resource wrap = resourceResolver.getResource("/content/internalProject/home/topNavWrap/jcr:content/par");
                         if(wrap != null){
                         Iterator <Resource> iterator=wrap.listChildren();
                         while(iterator.hasNext()){
@@ -36,7 +36,7 @@
                                 <div class="cartValue">0</div>
                             </li>
                             <li>
-                                <cq:include path="stock" resourceType="/apps/internal/components/content/stockUpdate"/>
+                                <cq:include path="stock" resourceType="/apps/internalProject/components/content/stockUpdate"/>
                             </li>
                         </ul>
                     </div>
@@ -50,7 +50,7 @@
                     <nav>
                         <ul>
                             <%
-                                Resource res = resourceResolver.getResource("/content/home/TopNavigation/jcr:content/par");
+                                Resource res = resourceResolver.getResource("/content/internalProject/home/TopNavigation/jcr:content/par");
                                 if(res != (null)){
                                     Iterator<Resource> itr = res.listChildren();
                                     while(itr.hasNext()){
