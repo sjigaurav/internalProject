@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <basic
+                jcr:primaryType="cq:Panel"
+                title="Basic">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Title"
+                        name="./title"
+                        validateOnBlur="true"
+                        xtype="textfield"/>
+                    <path
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Child Path"
+                        name="./childPath"
+                        xtype="pathfield"/>
+                    <depth
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Depth"
+                        name="./depth"
+                        xtype="numberfield"/>
+                    <absolutePath
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Absolute Parent"
+                        name="./absParent"
+                        xtype="numberfield"/>
+                </items>
+            </basic>
+        </items>
+    </items>
+</jcr:root>
