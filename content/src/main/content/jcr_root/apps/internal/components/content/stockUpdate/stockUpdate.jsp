@@ -4,7 +4,6 @@
         String exchange = properties.get("exchange","");
         String url = properties.get("url","");
 %>
-
 <div class="label"><%=exchange%></div>
 <div class="nseValue up">x <i class="fa fa-arrow-up"></i></div>
 <script>
@@ -16,8 +15,6 @@
                         console.log(json);
                         var x=json[0].l;
                         $(".nseValue.up").html(x);
-
-
                 }
         });
         })

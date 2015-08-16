@@ -1,0 +1,11 @@
+<div data-sly-test="${wcmmode.edit}" data-sly-unwrap>
+    This is the glanceComponent..
+</div>
+
+<div data-sly-test.css="${wcmmode.edit?'':'slick-slide'}" data-sly-unwrap></div>
+
+<div class="${css}">
+    <h2>${properties.heading @context='html'}</h2>
+    <div class="subHead">${properties.subheading @context='html'}</div>
+    <p>${properties.description @context='html'}</p>
+</div>

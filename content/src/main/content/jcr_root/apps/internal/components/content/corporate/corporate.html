@@ -1,0 +1,20 @@
+<div data-sly-test="${wcmmode.edit}">
+    this is the corporate component..
+</div>
+<div class="cardRow hpCsrBg" style="background: url(${properties.fileReference @ context = 'html'}) right top no-repeat;">
+    <div class="col">
+        <div class="sliderWrapper">
+            <h2>${properties.heading}</h2>
+
+            <div class="subHead">${properties.description @ context = 'html' }</div>
+            <p>${properties.moredescription @ context = 'html' } </p>
+
+            <div class="buttonWrapper">
+                <div class="buttonGlbl"><a href="${properties.pathfield}.html"><span><i class="fa fa-arrow-right"></i>${properties.button}</span></a>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+</div>
+<div style="clear:both;"></div>

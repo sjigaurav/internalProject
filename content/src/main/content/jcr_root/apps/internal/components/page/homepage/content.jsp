@@ -1,5 +1,6 @@
 <%@include file="/apps/internal/global.jsp" %>
 <div class="width100Per">
+    <sling:include path="/content/home/chairman/jcr:content/par/spotlightContainer"/>
     <div class="homePageWrapper">
         <div class="container">
             <div class="master">

@@ -41,7 +41,7 @@
                             layout="form"
                             padding="10px"
                             width="1000"
-                            xtype="multifiedpanel">
+                            xtype="multifieldpanel">
                             <items jcr:primaryType="cq:WidgetCollection">
                                 <site
                                     jcr:primaryType="cq:Widget"
@@ -81,7 +81,7 @@
                             layout="form"
                             padding="10px"
                             width="1000"
-                            xtype="multifiedpanel">
+                            xtype="multifieldpanel">
                             <items jcr:primaryType="cq:WidgetCollection">
                                 <title
                                     jcr:primaryType="cq:Widget"
