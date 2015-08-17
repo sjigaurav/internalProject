@@ -36,7 +36,7 @@
                                 <div class="cartValue">0</div>
                             </li>
                             <li>
-                                <cq:include path="stock" resourceType="/apps/internalProject/components/content/stockUpdate"/>
+                                <cq:include path="stock" resourceType="/apps/internal/components/content/stockUpdate"/>
                             </li>
                         </ul>
                     </div>
