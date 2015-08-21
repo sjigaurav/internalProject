@@ -11,37 +11,37 @@
                 jcr:primaryType="cq:Panel"
                 title="Basic">
                 <items jcr:primaryType="cq:WidgetCollection">
-                    <prop2
+                    <heading
                         jcr:primaryType="nt:unstructured"
                         fieldLabel="Heading"
                         name="./heading"
                         validateOnBlur="true"
                         xtype="textfield"/>
-                    <prop3
+                    <subheading
                         jcr:primaryType="nt:unstructured"
                         fieldLabel="Subheading"
                         name="./subheading"
                         validateOnBlur="true"
                         xtype="textfield"/>
-                    <prop4
+                    <description
                         jcr:primaryType="nt:unstructured"
                         fieldLabel="Description"
                         name="./description"
                         validateOnBlur="true"
                         xtype="textfield"/>
-                    <prop5
+                    <button
                         jcr:primaryType="nt:unstructured"
                         fieldLabel="Button"
                         name="./button"
                         validateOnBlur="true"
                         xtype="textfield"/>
-                    <prop6
+                    <secondButton
                         jcr:primaryType="nt:unstructured"
                         fieldLabel="Secondbutton"
                         name="./secondbutton"
                         validateOnBlur="true"
                         xtype="textfield"/>
-                    <URL
+                    <url
                         jcr:primaryType="nt:unstructured"
                         fieldLabel="URL"
                         name="./url"

@@ -1,15 +1,15 @@
 var MyClientLib = MyClientLib || {};
  
-MyClientLib.MultifiedPanel = CQ.Ext.extend(CQ.Ext.Panel, {
+MyClientLib.MultifieldPanel = CQ.Ext.extend(CQ.Ext.Panel, {
     panelValue: '',
  
     constructor: function(config){
         config = config || {};
-        MyClientLib.MultifiedPanel.superclass.constructor.call(this, config);
+        MyClientLib.MultifieldPanel.superclass.constructor.call(this, config);
     },
  
     initComponent: function () {
-        MyClientLib.MultifiedPanel.superclass.initComponent.call(this);
+        MyClientLib.MultifieldPanel.superclass.initComponent.call(this);
  
         this.panelValue = new CQ.Ext.form.Hidden({
             name: this.name
@@ -69,4 +69,4 @@ MyClientLib.MultifiedPanel = CQ.Ext.extend(CQ.Ext.Panel, {
     }
 });
 
-CQ.Ext.reg("multifiedpanel", MyClientLib.MultifiedPanel);
+CQ.Ext.reg("multifieldpanel", MyClientLib.MultifieldPanel);

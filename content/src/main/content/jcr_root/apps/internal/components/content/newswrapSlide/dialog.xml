@@ -11,13 +11,13 @@
                 jcr:primaryType="cq:Panel"
                 title="Basic1">
                 <items jcr:primaryType="cq:WidgetCollection">
-                    <prop2
+                    <description
                         jcr:primaryType="nt:unstructured"
                         fieldLabel="Description"
                         name="./description"
                         validateOnBlur="true"
                         xtype="textfield"/>
-                    <prop3
+                    <date
                         jcr:primaryType="nt:unstructured"
                         fieldLabel="Date"
                         name="./date"
