@@ -40,6 +40,16 @@
                                 features="*"/>
                         </rtePlugins>
                     </description>
+                    <comboBox
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}true"
+                        fieldLabel="comboBox"
+                        name="comboBox"
+                        options="/bin/page.html"
+                        optionsTextFfield="text"
+                        optionsValueField="value"
+                        type="select"
+                        xtype="selection"/>
                 </items>
             </tab1>
         </items>
