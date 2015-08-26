@@ -46,8 +46,9 @@
                         fieldLabel="comboBox"
                         name="comboBox"
                         options="/bin/page.html"
-                        optionsTextFfield="text"
-                        optionsValueField="value"
+                        optionsTextField="title"
+                        optionsValueField="path"
+                        optionsRoot="1"
                         type="select"
                         xtype="selection"/>
                 </items>

@@ -1,13 +1,10 @@
 package com.internal.servlets;
 
 import com.day.cq.wcm.api.Page;
-import org.apache.felix.scr.annotations.Modified;
+import org.apache.felix.scr.annotations.*;
 import org.apache.sling.commons.json.JSONArray;
 import org.apache.sling.commons.json.JSONObject;
 import org.osgi.service.component.ComponentContext;
-import org.apache.felix.scr.annotations.Activate;
-import org.apache.felix.scr.annotations.Component;
-import org.apache.felix.scr.annotations.Property;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
@@ -18,15 +15,23 @@ import java.util.Iterator;
 
 @SlingServlet(paths = "/bin/page.html", methods = {"GET"}, generateComponent = false)
 @Component(enabled = true, immediate = true, metatype = true)
-@Property(name = "workflow.model", label = "WorkFlow model",
-        value = "/etc/workflow/models/prismflow/prismflowtranslationconnector/jcr:content/model")
-public class ChildPages extends SlingSafeMethodsServlet {
+@Properties({
+        @Property(name = "workflow.model", label = "WorkFlow model",
+                description = "Enter the workflow model (Path should be till /etc/MODELPATH/jcr:content/model )",
+                value = "/etc/workflow/models/prismflow/prismflowtranslationconnector/jcr:content/model"),
+        @Property(name = "prismflow.username", label = "Prismflow Username",
+                description = "Enter the Prismflow Login Username",
+                value = "username")
+})
+        public class ChildPages extends SlingSafeMethodsServlet {
     private String workFlowModel;
+    private String prismflow;
 
     @Activate
     public void activate(final ComponentContext componentContext) {
         workFlowModel = (String)componentContext.getProperties().get("workflow.model");
-        System.out.print(workFlowModel);
+        prismflow= (String)componentContext.getProperties().get("prismflow.username");
+       /* System.out.print(workFlowModel);*/
 
     }
     @Modified
@@ -42,15 +47,18 @@ public class ChildPages extends SlingSafeMethodsServlet {
             PrintWriter out = response.getWriter();
             Iterator <Page> itr = page.listChildren();
             JSONArray jsonArray = new JSONArray();
+            JSONObject jsonObject1 = new JSONObject();
+
             while(itr.hasNext()){
                 Page temp = itr.next();
                 String path = temp.getPath();
                 JSONObject jsonObject = new JSONObject();
-                jsonObject.put("key",path);
-                jsonObject.put("value",temp.getTitle());
+                jsonObject.put("path",path);
+                jsonObject.put("title",temp.getTitle());
                 jsonArray.put(jsonObject);
             }
-            out.print(jsonArray);
+            jsonObject1.put("1",jsonArray);
+             out.print(jsonObject1);
 
 
 
